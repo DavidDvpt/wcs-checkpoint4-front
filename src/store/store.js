@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import carouselReducer from './carousel/reducer';
+import realEstateReducer from './realEstate/reducer';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    realEstate: realEstateReducer,
+    carousel: carouselReducer,
   },
 });

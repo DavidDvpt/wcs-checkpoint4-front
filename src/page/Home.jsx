@@ -1,5 +1,19 @@
+import { useHistory } from "react-router-dom";
+import { Button, Row } from "reactstrap";
+import Caroussel from "../components/carousel/Caroussel";
+
 const Home = () => {
-  return <div>Home</div>
+const history = useHistory();
+  return (
+    <>
+    <Caroussel />
+    <Row>
+      <Button onClick={} >Map</Button>
+      <Button >Famille royale</Button>
+      <Button >Patrimoine</Button>
+    </Row>
+    </>
+  );
 }
 
-export default Home
+export default Home;
