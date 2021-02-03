@@ -1,0 +1,3 @@
+const SET_FAMILY_LIST = 'SET_FAMILY_LIST';
+
+export default SET_FAMILY_LIST;

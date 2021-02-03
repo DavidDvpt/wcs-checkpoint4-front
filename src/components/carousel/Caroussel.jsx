@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Carousel, CarouselControl, CarouselIndicators } from 'reactstrap';
-import getRealEstates from '../../apiBack';
+import { getRealEstates } from '../../apiBack';
 import setRealEstateList from '../../store/realEstate/actionCreator';
 // import { setRealEstateList } from '../../store/realEstate/actionCreator';
 import CarousselItem from './CarousselItem';
