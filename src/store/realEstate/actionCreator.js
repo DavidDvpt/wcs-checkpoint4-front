@@ -1,10 +1,10 @@
-import { SET_REALESTATE_LIST } from "./actionType";
+import { SET_REALESTATE_LIST } from './actionType';
 
-export function setRealEstateList(data) {
+export default function setRealEstateList(data) {
   return {
     type: SET_REALESTATE_LIST,
     payload: {
-      realEstateList: data
-    }
-  }
+      realEstateList: data,
+    },
+  };
 }

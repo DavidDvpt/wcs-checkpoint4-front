@@ -1,36 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Carousel, CarouselControl, CarouselIndicators } from 'reactstrap';
-import { getRealEstates } from '../../apiBack';
+import getRealEstates from '../../apiBack';
+import setRealEstateList from '../../store/realEstate/actionCreator';
 // import { setRealEstateList } from '../../store/realEstate/actionCreator';
 import CarousselItem from './CarousselItem';
 
-const Caroussel = (props) => {
+const Caroussel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [realEstates, setRealEstates] = useState([]);
+  const dispatch = useDispatch();
   const animating = useSelector((state) => state.carousel.animating);
-  const realEstateList = useSelector(
-    (state) => state.realEstate.realEstateList
-  );
+  // const realEstateList = useSelector(
+  //   (state) => state.realEstate.realEstateList
+  // );
 
   // const dispatch = useDispatch();
 
   useEffect(() => {
-    setRealEstates([]);
-    getRealEstates().then((results) => setRealEstates(results.data));
+    getRealEstates().then((results) => {
+      setRealEstates(results.data);
+      dispatch(setRealEstateList(results.data));
+    });
   }, []);
 
   const next = () => {
     if (animating) return;
     const nextIndex =
-      activeIndex === realEstateList.length - 1 ? 0 : activeIndex + 1;
+      activeIndex === realEstates.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
 
   const previous = () => {
     if (animating) return;
     const nextIndex =
-      activeIndex === 0 ? realEstateList.length - 1 : activeIndex - 1;
+      activeIndex === 0 ? realEstates.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
 
