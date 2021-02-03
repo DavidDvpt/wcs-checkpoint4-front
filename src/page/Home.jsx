@@ -3,7 +3,8 @@ import { Button, Row } from "reactstrap";
 import Caroussel from "../components/carousel/Caroussel";
 
 const Home = () => {
-const history = useHistory();
+  const history = useHistory();
+  
   return (
     <>
     <Caroussel />
