@@ -12,7 +12,6 @@ const Login = () => {
 
   // login succes
   const loginSuccess = (data) => {
-    console.log(data);
     dispatch(loginAction(data.token, data.family));
     localStorage.setItem('token', data.token);
     localStorage.setItem('admin', data.family);

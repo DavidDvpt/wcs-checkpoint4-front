@@ -8,6 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import AdminNavigation from '../components/navigation/AdminNavigation';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,7 @@ const Navigation = () => {
             <NavItem>
               <NavLink href="/goldBook">Livre d&aposor</NavLink>
             </NavItem>
+            <AdminNavigation />
           </Nav>
         </Collapse>
       </Navbar>

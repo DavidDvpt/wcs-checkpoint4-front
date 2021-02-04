@@ -6,4 +6,4 @@ const realEstateDetail = () => {
   return <div>{id}</div>;
 };
 
-export default FamilyDetail;
+export default realEstateDetail;
