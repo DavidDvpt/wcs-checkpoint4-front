@@ -1,4 +1,4 @@
-import { SET_REALESTATE_LIST } from './actionType';
+import SET_REALESTATE_LIST from './actionType';
 
 const initalState = {
   realEstateList: [],

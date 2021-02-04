@@ -28,7 +28,7 @@ const Home = () => {
         <Button
           className="col-xs-12 col-sm-3 m-1"
           onClick={() => {
-            history.push('/realState');
+            history.push('/realEstate');
           }}
         >
           Patrimoine

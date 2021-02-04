@@ -1,17 +1,15 @@
-import { SET_ANIMATING_FALSE, SET_ANIMATING_TRUE } from "./actionType";
+import { SET_ANIMATING_FALSE, SET_ANIMATING_TRUE } from './actionType';
 
-export function setAnimatingFalse(){
+export function setAnimatingFalse() {
   return {
     type: SET_ANIMATING_FALSE,
-    payload: {
-    }
-  }
+    payload: {},
+  };
 }
 
-export function setAnimatingTrue(){
+export function setAnimatingTrue() {
   return {
     type: SET_ANIMATING_TRUE,
-    payload: {
-    }
-  }
+    payload: {},
+  };
 }

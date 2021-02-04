@@ -3,8 +3,9 @@ import Map from './page/Map';
 import Layout from './layout/Layout';
 import Home from './page/Home';
 import FamilyList from './page/FamilyList';
-import CastleList from './page/CastleList';
+import CastleList from './page/RealEstateList';
 import Login from './page/Login';
+import FamilyDetail from './page/FamilyDetail';
 
 const Router = () => {
   return (
@@ -15,7 +16,9 @@ const Router = () => {
           <Route path="/map" component={Map} />
           <Route path="/login" component={Login} />
           <Route path="/family" component={FamilyList} />
-          <Route path="/realState" component={CastleList} />
+          <Route path="/familyDetail/:id" component={FamilyDetail} />
+          <Route path="/realEstate" component={CastleList} />
+          <Route path="/realEstateDetail/:id" component={FamilyDetail} />
         </Switch>
       </Layout>
     </BrowserRouter>

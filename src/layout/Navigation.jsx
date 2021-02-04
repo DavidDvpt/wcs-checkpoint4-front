@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Collapse,
   Navbar,
@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 
 const Navigation = () => {
-const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -28,12 +28,13 @@ const [isOpen, setIsOpen] = useState(false);
               <NavLink href="/realEstate">Chateaux</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/goldBook">Livre d'or</NavLink>
+              <NavLink href="/goldBook">Livre d&aposor</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
-    </div>)
-}
+    </div>
+  );
+};
 
-export default Navigation
+export default Navigation;

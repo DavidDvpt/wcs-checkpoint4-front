@@ -1,10 +1,22 @@
 import { Button, Form, Input, Label } from 'reactstrap';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { getAuth } from '../apiBack';
+import { loginAction } from '../store/admin/actionCreator';
 
 const Login = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
+
+  // login succes
+  const loginSuccess = (data) => {
+    console.log(data);
+    dispatch(loginAction(data.token, data.family));
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('admin', data.family);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,7 +24,10 @@ const Login = () => {
       login,
       password,
     };
-    getAuth(data).then();
+    getAuth(data)
+      .then((results) => loginSuccess(results.data))
+      // todo : error tratment
+      .catch((err) => console.log(err.response));
   };
 
   return (

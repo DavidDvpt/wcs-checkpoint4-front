@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Card, CardImg, CardSubtitle, Container } from 'reactstrap';
+import { Container } from 'reactstrap';
 import { getFamilyList } from '../apiBack';
 import CustomCard from '../components/CustomCard';
 import setFamilyList from '../store/family/actionCreator';
@@ -21,19 +21,12 @@ const FamilyList = () => {
       <Container />
       {familys.map((f) => (
         <CustomCard
+          key={f.imageName}
+          id={f.id}
+          child="Family"
           imageName={f.imageName}
           subtitle={`${f.firstname} ${f.lastname}`}
         />
-      ))}
-      {familys.map((f) => (
-        <Card key={f.firstname} className="row align">
-          <CardImg
-            className="w-25"
-            src={`/static/media/${f.imageName}`}
-            alt={f.lastname}
-          />
-          <CardSubtitle>{`${f.firstname} ${f.lastname}`}</CardSubtitle>
-        </Card>
       ))}
     </>
   );

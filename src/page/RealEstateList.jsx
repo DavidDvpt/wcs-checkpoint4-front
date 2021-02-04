@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Container } from 'reactstrap';
 import CustomCard from '../components/CustomCard';
 
-const CastleList = () => {
+const RealEstateList = () => {
   const realEstates = useSelector((state) => state.realEstate.realEstateList);
 
   return (
@@ -10,11 +10,17 @@ const CastleList = () => {
       <h1>Mon Patrimoine</h1>
       <Container>
         {realEstates.map((f) => (
-          <CustomCard imageName={`chateaux/${f.imageName}`} subtitle={f.name} />
+          <CustomCard
+            key={f.imageName}
+            id={f.id}
+            child="realEstate"
+            imageName={`chateaux/${f.imageName}`}
+            subtitle={f.name}
+          />
         ))}
       </Container>
     </>
   );
 };
 
-export default CastleList;
+export default RealEstateList;

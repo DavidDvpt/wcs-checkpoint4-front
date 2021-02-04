@@ -21,7 +21,7 @@ export function getRealEstatesList() {
 }
 
 export function getAuth(data) {
-  const url = BASE_URL.concat('/family');
+  const url = BASE_URL.concat('/auth');
 
-  return axios.get(url);
+  return axios.post(url, data);
 }
