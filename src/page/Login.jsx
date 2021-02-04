@@ -1,12 +1,14 @@
 import { Button, Form, Input, Label } from 'reactstrap';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { getAuth } from '../apiBack';
 import { loginAction } from '../store/admin/actionCreator';
 
 const Login = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const dispatch = useDispatch();
 
@@ -15,6 +17,7 @@ const Login = () => {
     dispatch(loginAction(data.token, data.family));
     localStorage.setItem('token', data.token);
     localStorage.setItem('admin', data.family);
+    history.push('/');
   };
 
   const handleSubmit = (e) => {

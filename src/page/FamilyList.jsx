@@ -15,6 +15,7 @@ const FamilyList = () => {
       dispatch(setFamilyList(results.data));
     });
   }, []);
+
   return (
     <>
       <h1>Famille royale</h1>

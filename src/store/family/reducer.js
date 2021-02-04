@@ -6,7 +6,7 @@ const initialState = {
 export default function familyReducer(state = initialState, action) {
   switch (action.type) {
     case SET_FAMILY_LIST:
-      return { ...state, familyList: action.payload.data };
+      return { ...state, familyList: action.payload.familyList };
     default:
       return state;
   }

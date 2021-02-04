@@ -26,6 +26,24 @@ export function getRealEstatesList() {
   return axios.get(url);
 }
 
+export function getVisitQuantityBiDateAndId(id, selectedDate) {
+  const url = BASE_URL.concat(`/realEstate/${id}?selectedDate=${selectedDate}`);
+
+  return axios.get(url);
+}
+
+export function postVisit(data) {
+  const url = BASE_URL.concat('/visit');
+
+  return axios.post(url, data);
+}
+
+export function putRealEstateMaxVisite(id, data) {
+  const url = BASE_URL.concat(`/realEstate/${id}`);
+
+  return axios.put(url, data);
+}
+
 //* **************************************
 //* Authentication
 //* **************************************

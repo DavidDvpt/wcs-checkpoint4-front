@@ -6,6 +6,9 @@ import FamilyList from './page/FamilyList';
 import CastleList from './page/RealEstateList';
 import Login from './page/Login';
 import FamilyDetail from './page/FamilyDetail';
+import realEstateDetail from './page/RealEstateDetail';
+import Reservation from './page/Reservation';
+import AdminCommercial from './page/AdminCommercial';
 
 const Router = () => {
   return (
@@ -18,7 +21,9 @@ const Router = () => {
           <Route path="/family" component={FamilyList} />
           <Route path="/familyDetail/:id" component={FamilyDetail} />
           <Route path="/realEstate" component={CastleList} />
-          <Route path="/realEstateDetail/:id" component={FamilyDetail} />
+          <Route path="/commercial" component={AdminCommercial} />
+          <Route path="/realEstateDetail/:id" component={realEstateDetail} />
+          <Route path="/reservation/:id/:name" component={Reservation} />
         </Switch>
       </Layout>
     </BrowserRouter>

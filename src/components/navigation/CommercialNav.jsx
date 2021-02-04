@@ -1,23 +1,20 @@
-import {
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from 'reactstrap';
+import { useHistory } from 'react-router-dom';
+import { DropdownItem } from 'reactstrap';
 
 const CommercialNav = () => {
+  const history = useHistory();
+
   return (
-    <UncontrolledDropdown nav inNavbar>
-      <DropdownToggle nav caret>
-        Options
-      </DropdownToggle>
-      <DropdownMenu right>
-        <DropdownItem>Option 1</DropdownItem>
-        <DropdownItem>Option 2</DropdownItem>
-        <DropdownItem divider />
-        <DropdownItem>Reset</DropdownItem>
-      </DropdownMenu>
-    </UncontrolledDropdown>
+    <>
+      <DropdownItem
+        onClick={() => {
+          history.push('/commercial');
+        }}
+      >
+        Commerce Royal
+      </DropdownItem>
+      <DropdownItem divider />
+    </>
   );
 };
 
