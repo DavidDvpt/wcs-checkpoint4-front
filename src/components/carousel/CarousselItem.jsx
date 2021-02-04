@@ -23,9 +23,13 @@ const CarousselItem = ({ name, imageName }) => {
   );
 };
 
+CarousselItem.defaultProps = {
+  name: '',
+  imageName: '',
+};
 CarousselItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  imageName: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  imageName: PropTypes.string,
 };
 
 export default CarousselItem;
