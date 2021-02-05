@@ -3,12 +3,12 @@ import Map from './page/Map';
 import Layout from './layout/Layout';
 import Home from './page/Home';
 import FamilyList from './page/FamilyList';
-import CastleList from './page/RealEstateList';
 import Login from './page/Login';
 import FamilyDetail from './page/FamilyDetail';
 import realEstateDetail from './page/RealEstateDetail';
 import Reservation from './page/Reservation';
 import AdminCommercial from './page/AdminCommercial';
+import RealEstateList from './page/RealEstateList';
 
 const Router = () => {
   return (
@@ -20,7 +20,7 @@ const Router = () => {
           <Route path="/login" component={Login} />
           <Route path="/family" component={FamilyList} />
           <Route path="/familyDetail/:id" component={FamilyDetail} />
-          <Route path="/realEstate" component={CastleList} />
+          <Route path="/realEstate" component={RealEstateList} />
           <Route path="/commercial" component={AdminCommercial} />
           <Route path="/realEstateDetail/:id" component={realEstateDetail} />
           <Route path="/reservation/:id/:name" component={Reservation} />

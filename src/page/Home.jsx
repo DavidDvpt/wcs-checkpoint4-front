@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-import { Button, Row } from 'reactstrap';
+import { Row } from 'reactstrap';
 import Caroussel from '../components/carousel/Caroussel';
 
 const Home = () => {
@@ -8,31 +8,34 @@ const Home = () => {
   return (
     <>
       <Caroussel />
-      <Row className="justify-content-between">
-        <Button
-          className="col-xs-12 col-sm-3 m-1"
+      <Row className="justify-content-between mt-3">
+        <button
+          type="button"
+          className="col-xs-12 col-sm-3 m-1 btn btn-primary"
           onClick={() => {
             history.push('/map');
           }}
         >
           Map
-        </Button>
-        <Button
-          className="col-xs-12 col-sm-3 m-1"
+        </button>
+        <button
+          type="button"
+          className="col-xs-12 col-sm-3 m-1 btn btn-primary"
           onClick={() => {
             history.push('/family');
           }}
         >
           Famille royale
-        </Button>
-        <Button
-          className="col-xs-12 col-sm-3 m-1"
+        </button>
+        <button
+          type="button"
+          className="col-xs-12 col-sm-3 m-1 btn btn-primary"
           onClick={() => {
             history.push('/realEstate');
           }}
         >
           Patrimoine
-        </Button>
+        </button>
       </Row>
     </>
   );

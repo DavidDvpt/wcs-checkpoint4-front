@@ -1,18 +1,17 @@
-import { Card, CardImg, CardSubtitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const CustomCard = ({ id, child, imageName, subtitle }) => {
   return (
     <Link to={`/${child}Detail/${id}`}>
-      <Card key={subtitle} className="row align">
-        <CardImg
-          className="w-100"
+      <idv key={subtitle} className="row">
+        <img
+          className="col-6"
           src={`/static/media/${imageName}`}
           alt={subtitle}
         />
-        <CardSubtitle>{subtitle}</CardSubtitle>
-      </Card>
+        <h5 className="col-6 font-weight-bold m-auto">{subtitle}</h5>
+      </idv>
     </Link>
   );
 };
